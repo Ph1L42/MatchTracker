@@ -9,8 +9,12 @@ public class Scoreline {
     }
 
     public Scoreline(int homeGoals, int awayGoals) {
-        this.homeGoals = homeGoals;
-        this.awayGoals = awayGoals;
+        if (homeGoals >= 0 && awayGoals >= 0) {
+            this.homeGoals = homeGoals;
+            this.awayGoals = awayGoals;
+        } else {
+            throw new IllegalArgumentException("Negative Tore gibts nicht");
+        }
     }
 
     public int getHomeGoals() {
@@ -18,7 +22,11 @@ public class Scoreline {
     }
 
     public void setHomeGoals(int homeGoals) {
-        this.homeGoals = homeGoals;
+        if (homeGoals >= 0) {
+            this.homeGoals = homeGoals;
+        } else {
+            throw new IllegalArgumentException("Negative Tore gibts nicht");
+        }
     }
 
     public int getAwayGoals() {
@@ -26,7 +34,11 @@ public class Scoreline {
     }
 
     public void setAwayGoals(int awayGoals) {
-        this.awayGoals = awayGoals;
+        if(awayGoals >= 0) {
+            this.awayGoals = awayGoals;
+        } else {
+            throw new IllegalArgumentException("Negative Tore gibts nicht");
+        }
     }
 
     @Override
