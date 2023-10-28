@@ -9,6 +9,18 @@ public class Match {
     private Competition competetion;
     private String matchDay;
 
+    public Match() {
+    }
+
+    public Match(String matchID, Team homeTeam, Team awayTeam, String scoreLine, Competition competetion, String matchDay) {
+        this.matchID = matchID;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.scoreLine = scoreLine;
+        this.competetion = competetion;
+        this.matchDay = matchDay;
+    }
+
     public String getMatchID() {
         return matchID;
     }

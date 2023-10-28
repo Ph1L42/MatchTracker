@@ -7,6 +7,15 @@ public class Team {
     private List<Competition> competitionList;
     private String stadium;
 
+    public Team() {
+    }
+
+    public Team(String teamName, List<Competition> competitionList, String stadium) {
+        this.teamName = teamName;
+        this.competitionList = competitionList;
+        this.stadium = stadium;
+    }
+
     public String getTeamName() {
         return teamName;
     }
