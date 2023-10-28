@@ -5,14 +5,14 @@ public class Match {
     private String matchID;
     private Team homeTeam;
     private Team awayTeam;
-    private String scoreLine;
+    private Scoreline scoreLine;
     private Competition competetion;
     private String matchDay;
 
     public Match() {
     }
 
-    public Match(String matchID, Team homeTeam, Team awayTeam, String scoreLine, Competition competetion, String matchDay) {
+    public Match(String matchID, Team homeTeam, Team awayTeam, Scoreline scoreLine, Competition competetion, String matchDay) {
         this.matchID = matchID;
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
@@ -45,11 +45,11 @@ public class Match {
         this.awayTeam = awayTeam;
     }
 
-    public String getScoreLine() {
+    public Scoreline getScoreLine() {
         return scoreLine;
     }
 
-    public void setScoreLine(String scoreLine) {
+    public void setScoreLine(Scoreline scoreLine) {
         this.scoreLine = scoreLine;
     }
 
