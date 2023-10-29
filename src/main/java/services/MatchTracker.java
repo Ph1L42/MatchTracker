@@ -1,4 +1,6 @@
-package entities;
+package services;
+
+import entities.Match;
 
 import java.util.ArrayList;
 import java.util.List;
