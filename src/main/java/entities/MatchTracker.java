@@ -1,15 +1,21 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class MatchList {
+public class MatchTracker {
     private List<Match> matchHistory;
 
-    public MatchList() {
+    public MatchTracker() {
+        matchHistory = new ArrayList<>();
     }
 
-    public MatchList(List<Match> matchHistory) {
-        this.matchHistory = matchHistory;
+    public void addMatch(Match match){
+        matchHistory.add(match);
+    }
+
+    public void removeMatch(Match match){
+        matchHistory.remove(match);
     }
 
     public List<Match> getMatchHistory() {
