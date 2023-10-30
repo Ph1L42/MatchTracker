@@ -31,7 +31,7 @@ public class Match {
 
     @Getter
     @Setter
-    @ManyToOne
+    @OneToOne
     @Column
     private Competition competetion;
 
