@@ -1,10 +1,32 @@
 package entities;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Entity
 public class Team {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long teamId;
+
+    @Getter
+    @Setter
+    @Column(nullable = false)
     private String teamName;
+
+    @Getter
+    @Setter
+    @Column
+    @OneToMany
     private List<Competition> competitionList;
+
+    @Getter
+    @Setter
+    @Column
     private String stadium;
 
     public Team() {
@@ -13,30 +35,6 @@ public class Team {
     public Team(String teamName, List<Competition> competitionList, String stadium) {
         this.teamName = teamName;
         this.competitionList = competitionList;
-        this.stadium = stadium;
-    }
-
-    public String getTeamName() {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
-
-    public List<Competition> getCompetitionList() {
-        return competitionList;
-    }
-
-    public void setCompetitionList(List<Competition> competitionList) {
-        this.competitionList = competitionList;
-    }
-
-    public String getStadium() {
-        return stadium;
-    }
-
-    public void setStadium(String stadium) {
         this.stadium = stadium;
     }
 }

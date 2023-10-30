@@ -1,6 +1,14 @@
 package entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+
+@Entity
 public class Scoreline {
+
+    @Id
+    private Long id;
 
     private int homeGoals;
     private int awayGoals;

@@ -1,71 +1,51 @@
 package entities;
 
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
 public class Match {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private String matchID;
+
+    @Getter
+    @Setter
+    @OneToOne
+    @Column(nullable = false)
     private Team homeTeam;
+
+    @Getter
+    @Setter
+    @OneToOne
+    @Column(nullable = false)
     private Team awayTeam;
+
+    @Getter
+    @Setter
+    @Column(nullable = false)
+    @OneToOne
     private Scoreline scoreLine;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    @Column
     private Competition competetion;
-    private String matchDay;
+
+    /*TODO Date*/
+
+    public Match(String matchID, Team homeTeam, Team awayTeam, Scoreline scoreLine, Competition competetion) {
+        this.matchID = matchID;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.scoreLine = scoreLine;
+        this.competetion = competetion;
+    }
 
     public Match() {
-    }
 
-    public Match(String matchID, Team homeTeam, Team awayTeam, Scoreline scoreLine, Competition competetion, String matchDay) {
-        this.matchID = matchID;
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-        this.scoreLine = scoreLine;
-        this.competetion = competetion;
-        this.matchDay = matchDay;
-    }
-
-    public String getMatchID() {
-        return matchID;
-    }
-
-    public void setMatchID(String matchID) {
-        this.matchID = matchID;
-    }
-
-    public Team getHomeTeam() {
-        return homeTeam;
-    }
-
-    public void setHomeTeam(Team homeTeam) {
-        this.homeTeam = homeTeam;
-    }
-
-    public Team getAwayTeam() {
-        return awayTeam;
-    }
-
-    public void setAwayTeam(Team awayTeam) {
-        this.awayTeam = awayTeam;
-    }
-
-    public Scoreline getScoreLine() {
-        return scoreLine;
-    }
-
-    public void setScoreLine(Scoreline scoreLine) {
-        this.scoreLine = scoreLine;
-    }
-
-    public Competition getCompetetion() {
-        return competetion;
-    }
-
-    public void setCompetetion(Competition competetion) {
-        this.competetion = competetion;
-    }
-
-    public String getMatchDay() {
-        return matchDay;
-    }
-
-    public void setMatchDay(String matchDay) {
-        this.matchDay = matchDay;
     }
 }
