@@ -27,7 +27,7 @@ public class TeamController {
 
         Team team = new Team();
         team.setTeamName(teamname);
-        team.setCompetitionList(null);
+        team.setCompetitionList(competitionList);
         team.setStadium(stadium);
 
         return "Done";
