@@ -2,6 +2,7 @@ package matchtracker.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,7 +22,7 @@ public class Team {
 
     //region Relationships
     @ManyToMany
-    private Set<Spieltag> spieltags;
+    private List<Spieltag> spieltags;
 
     //region Constructors
     public Team() {
@@ -57,11 +58,11 @@ public class Team {
         this.stadium = stadium;
     }
 
-    public Set<Spieltag> getMatches() {
+    public List<Spieltag> getSpieltags() {
         return spieltags;
     }
 
-    public void setMatches(Set<Spieltag> spieltags) {
+    public void setSpieltags(List<Spieltag> spieltags) {
         this.spieltags = spieltags;
     }
 }

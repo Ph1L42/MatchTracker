@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import matchtracker.repositories.MatchRepository;
 
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -25,8 +26,8 @@ public class MatchController {
                                          @RequestParam Competition competition) {
 
         Spieltag spieltag = new Spieltag();
-        spieltag.setHomeTeam((Set<Team>) homeTeam);
-        spieltag.setAwayTeam((Set<Team>) awayTeam);
+        spieltag.setHomeTeam((List<Team>) homeTeam);
+        spieltag.setAwayTeam((List<Team>) awayTeam);
         spieltag.setScoreLine(scoreline);
         spieltag.setCompetetion(competition);
 

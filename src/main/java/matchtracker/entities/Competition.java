@@ -3,6 +3,7 @@ package matchtracker.entities;
 import jakarta.persistence.*;
 
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,7 @@ public class Competition {
     private String competitionName;
 
     @OneToMany
-    private Set<Spieltag> spieltags;
+    private List<Spieltag> spieltags;
 
     public Competition() {
     }
@@ -41,12 +42,11 @@ public class Competition {
         this.competitionName = competitionName;
     }
 
-
-    public Set<Spieltag> getMatches() {
+    public List<Spieltag> getSpieltags() {
         return spieltags;
     }
 
-    public void setMatches(Set<Spieltag> spieltags) {
+    public void setSpieltags(List<Spieltag> spieltags) {
         this.spieltags = spieltags;
     }
 }

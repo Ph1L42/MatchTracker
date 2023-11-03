@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,7 +17,7 @@ public class Scoreline {
     private int awayGoals;
 
     @OneToMany
-    private Set<Spieltag> spieltags;
+    private List<Spieltag> spieltags;
 
     public Scoreline() {
     }
@@ -62,11 +63,11 @@ public class Scoreline {
         }
     }
 
-    public Set<Spieltag> getMatches() {
+    public List<Spieltag> getSpieltags() {
         return spieltags;
     }
 
-    public void setMatches(Set<Spieltag> spieltags) {
+    public void setSpieltags(List<Spieltag> spieltags) {
         this.spieltags = spieltags;
     }
 

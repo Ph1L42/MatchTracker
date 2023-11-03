@@ -3,6 +3,9 @@ package matchtracker.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 
@@ -15,11 +18,11 @@ public class Spieltag {
 
     @ManyToMany
     @JoinColumn(name = "team_id")
-    private Set<Team> homeTeam;
+    private List<Team> homeTeam;
 
     @ManyToMany
     @JoinColumn(name = "team_id")
-    private Set<Team> awayTeam;
+    private List<Team> awayTeam;
 
     @OneToOne
     private Scoreline scoreLine;
@@ -32,8 +35,8 @@ public class Spieltag {
 
     public Spieltag(String id, Team homeTeam, Team awayTeam, Scoreline scoreLine, Competition competetion) {
         this.id = id;
-        this.homeTeam = (Set<Team>) homeTeam;
-        this.awayTeam = (Set<Team>) awayTeam;
+        this.homeTeam = new ArrayList<Team>((Collection<? extends Team>) homeTeam);
+        this.awayTeam = new ArrayList<Team>((Collection<? extends Team>) awayTeam);
         this.scoreLine = scoreLine;
         this.competetion = competetion;
     }
@@ -50,19 +53,19 @@ public class Spieltag {
         this.id = id;
     }
 
-    public Set<Team> getHomeTeam() {
+    public List<Team> getHomeTeam() {
         return homeTeam;
     }
 
-    public void setHomeTeam(Set<Team> homeTeam) {
+    public void setHomeTeam(List<Team> homeTeam) {
         this.homeTeam = homeTeam;
     }
 
-    public Set<Team> getAwayTeam() {
+    public List<Team> getAwayTeam() {
         return awayTeam;
     }
 
-    public void setAwayTeam(Set<Team> awayTeam) {
+    public void setAwayTeam(List<Team> awayTeam) {
         this.awayTeam = awayTeam;
     }
 
