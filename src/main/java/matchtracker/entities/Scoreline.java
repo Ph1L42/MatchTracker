@@ -1,8 +1,10 @@
-package entities;
+package matchtracker.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+
+import java.util.Set;
 
 @Entity
 public class Scoreline {
@@ -12,6 +14,9 @@ public class Scoreline {
 
     private int homeGoals;
     private int awayGoals;
+
+    @OneToMany
+    private Set<Spieltag> spieltags;
 
     public Scoreline() {
     }
@@ -23,6 +28,14 @@ public class Scoreline {
         } else {
             throw new IllegalArgumentException("Negative Tore gibts nicht");
         }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getHomeGoals() {
@@ -42,11 +55,19 @@ public class Scoreline {
     }
 
     public void setAwayGoals(int awayGoals) {
-        if(awayGoals >= 0) {
+        if (awayGoals >= 0) {
             this.awayGoals = awayGoals;
         } else {
             throw new IllegalArgumentException("Negative Tore gibts nicht");
         }
+    }
+
+    public Set<Spieltag> getMatches() {
+        return spieltags;
+    }
+
+    public void setMatches(Set<Spieltag> spieltags) {
+        this.spieltags = spieltags;
     }
 
     @Override

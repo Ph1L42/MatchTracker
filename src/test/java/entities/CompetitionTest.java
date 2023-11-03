@@ -1,5 +1,6 @@
 package entities;
 
+import matchtracker.entities.Competition;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

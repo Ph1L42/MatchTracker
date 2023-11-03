@@ -1,6 +1,6 @@
-package services;
+package matchtracker.services;
 
-import entities.Team;
+import matchtracker.entities.Team;
 
 import java.util.ArrayList;
 import java.util.List;

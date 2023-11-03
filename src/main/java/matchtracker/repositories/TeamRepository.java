@@ -1,6 +1,6 @@
-package repositories;
+package matchtracker.repositories;
 
-import entities.Team;
+import matchtracker.entities.Team;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TeamRepository extends CrudRepository<Team, Integer> {

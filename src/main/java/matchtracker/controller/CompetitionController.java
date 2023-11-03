@@ -1,12 +1,10 @@
-package controller;
+package matchtracker.controller;
 
-import entities.Competition;
+import matchtracker.entities.Competition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import repositories.CompetitionRepository;
-
-import java.util.List;
+import matchtracker.repositories.CompetitionRepository;
 
 @Controller
 @RequestMapping(path = "competition")

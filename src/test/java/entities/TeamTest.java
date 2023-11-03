@@ -1,20 +1,12 @@
 package entities;
 
+import matchtracker.entities.Team;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class TeamTest {
-
-
-    @Test
-    public void testGetTeamName() {
-        Team team = new Team("FC Bayern", null, "Allianz Arena");
-        assertEquals("FC Bayern", team.getTeamName());
-    }
 
     @Test
     public void testSetTeamName() {
@@ -25,7 +17,7 @@ public class TeamTest {
 
     @Test
     public void testGetStadium() {
-        Team team = new Team("Liverpool FC", null, "Anfield");
+        Team team = new Team("Liverpool FC", "Anfield");
         assertEquals("Anfield", team.getStadium());
     }
 

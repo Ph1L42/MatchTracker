@@ -1,13 +1,15 @@
-package controller;
+package matchtracker.controller;
 
-import entities.Competition;
-import entities.Match;
-import entities.Scoreline;
-import entities.Team;
+import matchtracker.entities.Competition;
+import matchtracker.entities.Spieltag;
+import matchtracker.entities.Scoreline;
+import matchtracker.entities.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import repositories.MatchRepository;
+import matchtracker.repositories.MatchRepository;
+
+import java.util.Set;
 
 @Controller
 @RequestMapping(path = "match")
@@ -22,17 +24,17 @@ public class MatchController {
                                          @RequestParam Scoreline scoreline,
                                          @RequestParam Competition competition) {
 
-        Match match = new Match();
-        match.setHomeTeam(homeTeam);
-        match.setAwayTeam(awayTeam);
-        match.setScoreLine(scoreline);
-        match.setCompetetion(competition);
+        Spieltag spieltag = new Spieltag();
+        spieltag.setHomeTeam((Set<Team>) homeTeam);
+        spieltag.setAwayTeam((Set<Team>) awayTeam);
+        spieltag.setScoreLine(scoreline);
+        spieltag.setCompetetion(competition);
 
         return "Done";
     }
 
     @GetMapping(path = "all")
-    public @ResponseBody Iterable<Match> getAllMatches(){
+    public @ResponseBody Iterable<Spieltag> getAllMatches(){
         return matchRepository.findAll();
     }
 
