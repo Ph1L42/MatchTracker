@@ -7,17 +7,16 @@ import matchtracker.entities.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import matchtracker.repositories.MatchRepository;
+import matchtracker.repositories.SpieltagRespository;
 
 import java.util.List;
-import java.util.Set;
 
 @Controller
-@RequestMapping(path = "match")
-public class MatchController {
+@RequestMapping(path = "spieltag")
+public class SpieltagController {
 
     @Autowired
-    private MatchRepository matchRepository;
+    private SpieltagRespository spieltagRespository;
 
     @PostMapping(path = "/add")
     public @ResponseBody String addMatch(@RequestParam Team homeTeam,
@@ -36,7 +35,7 @@ public class MatchController {
 
     @GetMapping(path = "all")
     public @ResponseBody Iterable<Spieltag> getAllMatches(){
-        return matchRepository.findAll();
+        return spieltagRespository.findAll();
     }
 
 }

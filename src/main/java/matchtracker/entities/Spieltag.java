@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
@@ -35,8 +34,8 @@ public class Spieltag {
 
     public Spieltag(String id, Team homeTeam, Team awayTeam, Scoreline scoreLine, Competition competetion) {
         this.id = id;
-        this.homeTeam = new ArrayList<Team>((Collection<? extends Team>) homeTeam);
-        this.awayTeam = new ArrayList<Team>((Collection<? extends Team>) awayTeam);
+        this.homeTeam = new ArrayList<>((Collection<? extends Team>) homeTeam);
+        this.awayTeam = new ArrayList<>((Collection<? extends Team>) awayTeam);
         this.scoreLine = scoreLine;
         this.competetion = competetion;
     }

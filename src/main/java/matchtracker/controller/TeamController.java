@@ -18,15 +18,16 @@ public class TeamController {
 
     @PostMapping(path = "/add")
     public @ResponseBody String addTeam
-            (@RequestParam String teamname,
+            (@RequestParam String teamName,
              @RequestParam String stadium) {
 
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
-
         Team team = new Team();
-        team.setTeamName(teamname);
+        team.setTeamName(teamName);
         team.setStadium(stadium);
+
+        teamRepository.save(team);
 
         return "Done";
     }
