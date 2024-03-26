@@ -17,7 +17,7 @@ public class TeamTest {
 
     @Test
     public void testGetStadium() {
-        Team team = new Team("Liverpool FC", "Anfield");
+        Team team = new Team("Liverpool FC", "LFC", "Anfield");
         assertEquals("Anfield", team.getStadium());
     }
 

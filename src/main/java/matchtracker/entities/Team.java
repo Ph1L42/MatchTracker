@@ -16,6 +16,9 @@ public class Team {
     private String teamName;
 
     @Column
+    private String abbreviation;
+
+    @Column
     private String stadium;
     //endregion
 
@@ -27,8 +30,9 @@ public class Team {
     public Team() {
     }
 
-    public Team(String teamName, String stadium) {
+    public Team(String teamName, String abbreviation, String stadium) {
         this.teamName = teamName;
+        this.abbreviation = abbreviation;
         this.stadium = stadium;
     }
     //endregion
@@ -47,6 +51,14 @@ public class Team {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
     }
 
     public String getStadium() {
