@@ -76,4 +76,22 @@ public class Team {
     public void setSpieltags(List<Spieltag> spieltags) {
         this.spieltags = spieltags;
     }
+
+    /*TODO:
+     * Add Team Photo
+     * */
+    //Edit Team Name
+    public void editTeamName(Team team, String newTeamName){
+        team.setTeamName(newTeamName);
+    }
+
+    //Edit Abbreviation
+    public void editAbbreviation(Team team, String newAbbreviation){
+        team.setAbbreviation(newAbbreviation);
+    }
+
+    //Edit Stadium
+    public void editStadium(Team team, String newStadium){
+        team.setStadium(newStadium);
+    }
 }
