@@ -28,4 +28,23 @@ public class TeamsList {
     public void setTeamList(List<Team> teamList) {
         this.teamList = teamList;
     }
+
+    /*TODO:
+    * Add Team Photo
+    * */
+
+    //Edit Team Name
+    public void editTeamName(Team team, String newTeamName){
+        team.setTeamName(newTeamName);
+    }
+
+    //Edit Abbreviation
+    public void editAbbreviation(Team team, String newAbbreviation){
+        team.setAbbreviation(newAbbreviation);
+    }
+
+    //Edit Stadium
+    public void editStadium(Team team, String newStadium){
+        team.setStadium(newStadium);
+    }
 }
