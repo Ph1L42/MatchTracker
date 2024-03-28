@@ -28,4 +28,11 @@ public class TeamsList {
     public void setTeamList(List<Team> teamList) {
         this.teamList = teamList;
     }
+
+    public Team getTeamFromList(Team team) {
+
+        Long teamID = team.getId();
+
+        return teamList.get(Math.toIntExact(teamID));
+    }
 }
